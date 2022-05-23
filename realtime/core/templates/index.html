@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script>
+  const wsInstance = new WebSocket(`ws://${window.location.host}/real-time/`)
+  wsInstance.onmessage = (message) => {
+    console.log(message.data)
+  }
+</script>
+{% endblock content %}
